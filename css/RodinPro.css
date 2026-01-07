@@ -1,0 +1,51 @@
+/*Rodin Pro Font*/
+@font-face {
+    font-family: 'RodinPro';
+    src: url('../assets/FOT-Rodin Pro L.otf') format('opentype');
+    font-weight: 300; /* Light */
+}
+  
+@font-face {
+    font-family: 'RodinPro';
+    src: url('../assets/FOT-Rodin Pro M.otf') format('opentype');
+    font-weight: 500; /* Medium */
+}
+  
+@font-face {
+    font-family: 'RodinPro';
+    src: url('../assets/FOT-Rodin Pro DB.otf') format('opentype');
+    font-weight: 600; /* DemiBold */
+}
+  
+@font-face {
+    font-family: 'RodinPro';
+    src: url('../assets/FOT-Rodin Pro B.otf') format('opentype');
+    font-weight: 700; /* Bold */
+}
+  
+@font-face {
+    font-family: 'RodinPro';
+    src: url('../assets/FOT-Rodin Pro EB.otf') format('opentype');
+    font-weight: 800; /* ExtraBold */
+}
+  
+@font-face {
+    font-family: 'RodinPro';
+    src: url('../assets/FOT-Rodin Pro UB.otf') format('opentype');
+    font-weight: 900; /* UltraBold */
+}
+.RodinPro {     
+    font-family: 'RodinPro', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.fw-light { font-weight: 300; }
+.fw-medium { font-weight: 500; }
+.fw-demibold { font-weight: 600; }
+.fw-bold { font-weight: 700; }
+.fw-extrabold { font-weight: 800; }
+.fw-ultrabold { font-weight: 900; }
+html {
+    font-family: 'RodinPro', sans-serif;
+}
+/*End of Rodin Pro Font*/
