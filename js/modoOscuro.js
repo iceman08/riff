@@ -1,11 +1,33 @@
 
+
+function setDarkModeStorage(isDark) {
+    try {
+        localStorage.setItem('riff-darkmode', isDark ? '1' : '0');
+    } catch (e) {}
+}
+
+function getDarkModeStorage() {
+    try {
+        return localStorage.getItem('riff-darkmode') === '1';
+    } catch (e) { return false; }
+}
+
 var tabToggle = document.getElementById('tab-toggle');
 if (tabToggle) {
     tabToggle.onclick = function() {
+        var isDark = !document.body.classList.contains('dark');
         document.body.classList.toggle('dark');
+        setDarkModeStorage(isDark);
         updateDarkModeTab();
     };
 }
+
+// Al cargar la página, restaurar el modo oscuro si estaba activado
+window.addEventListener('DOMContentLoaded', function() {
+    if (getDarkModeStorage()) {
+        document.body.classList.add('dark');
+    }
+});
 
 function updateDarkModeTab() {
     var tab = document.getElementById('tab-toggle');
@@ -72,10 +94,38 @@ function applyDarkModeStyles() {
         text.style.color = dark ? '#f3f3f3' : '#23272f';
     });
 
-    var descTexts = document.querySelectorAll('section p.text-lg');
-    descTexts.forEach(function(text){
-        text.style.color = dark ? '#f3f3f3' : '#23272f';
+    // Soporte para los textos principales y lista corta
+    var mainTitle = document.querySelector('.darkmode-main-title');
+    if(mainTitle) mainTitle.style.color = dark ? '#f3f3f3' : '#23272f';
+    var mainOpiniones = document.querySelector('.darkmode-main-opiniones');
+    if(mainOpiniones) mainOpiniones.style.color = dark ? '#bdbdbd' : '#6b7280';
+    var mainList = document.querySelector('.darkmode-main-list');
+    if(mainList) mainList.style.color = dark ? '#f3f3f3' : '#374151';
+    var mainListItems = document.querySelectorAll('.darkmode-main-listitem');
+    mainListItems.forEach(function(item){
+        item.style.color = dark ? '#f3f3f3' : '#374151';
     });
+    var mainStrong = document.querySelectorAll('.darkmode-main-strong');
+    mainStrong.forEach(function(strong){
+        strong.style.color = dark ? '#fff' : '#23272f';
+    });
+
+    // Mejor soporte para la descripción extendida
+    var descSection = document.querySelector('section.darkmode-desc');
+    if(descSection) descSection.style.background = dark ? '#18181b' : '#fff';
+    var descTitle = document.querySelector('.darkmode-desc-title');
+    if(descTitle) descTitle.style.color = dark ? '#f3f3f3' : '#23272f';
+    var descList = document.querySelector('.darkmode-desc-list');
+    if(descList) descList.style.color = dark ? '#f3f3f3' : '#23272f';
+    var descItems = document.querySelectorAll('.darkmode-desc-item');
+    descItems.forEach(function(item){
+        item.style.color = dark ? '#f3f3f3' : '#23272f';
+    });
+    var descStrong = document.querySelectorAll('.darkmode-desc-strong');
+    descStrong.forEach(function(strong){
+        strong.style.color = dark ? '#fff' : '#23272f';
+    });
+
     var mobileMenu = document.querySelector('nav.md\\:hidden');
     if(mobileMenu) {
         mobileMenu.style.background = dark ? '#23272f' : '';

@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIFF • Controles para Guitar Hero & Rock Band</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/RodinPro.css">
+        <link rel="stylesheet" href="css/RodinPro.css">
+        <style>
+            body.dark .darkmode-index-desc {
+                color: #f3f3f3 !important;
+            }
+        </style>
 </head>
     <body class="bg-white" style="font-family: 'RodinPro', sans-serif;">
-    <!-- Pestaña modo oscuro -->
     <div id="darkmode-tab" style="position: fixed; bottom: 24px; left: 0; z-index: 1001;">
         <button id="tab-toggle" class="bg-gray-800 text-white rounded-r-xl px-5 py-2 shadow-md text-base">🌙</button>
     </div>
@@ -164,18 +168,21 @@
         <section class="max-w-full mx-auto px-12 py-16">
             <h3 class="text-sm font-bold mb-8">//TIENDA</h3>
             <h2 class="text-4xl font-bold mb-8">NOVEDADES</h2>
-            <p class="text-lg text-black mb-12">Ha llegado la nueva línea de CRKD x Gibson<sup class="text-xs">®</sup>, con características innovadoras y modernas diseñadas para los jugadores de hoy.</p>
+            <p class="text-lg text-black mb-12 darkmode-index-desc">Ha llegado la nueva línea de CRKD x Gibson<sup class="text-xs">®</sup>, con características innovadoras y modernas diseñadas para los jugadores de hoy.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
                 <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
+                <a href="producto-lespaul-blueberry.html" class="block focus:outline-none" style="text-decoration:none;">
+                    <div class="relative w-56 h-64 mb-6 group cursor-pointer">
                         <img src="media/CRKD_LP_BB_MP_WS_012.png" alt="Gibson Les Paul Blueberry Burst" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
                         <img src="media/CRKD_LP_BB_MP_WS_022.png" alt="Gibson Les Paul Blueberry Burst Hover" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
                     </div>
                     <div class="text-base font-semibold text-gray-900 text-left">Gibson Les Paul Blueberry Burst Pro Edition Guitar Controller (Multi-platforma)</div>
                     <div class="w-full text-sm font-bold text-gray-600 text-left mb-2">CRKD</div>
                     <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 439.90</div>
+                </a>
                 </div>
                 <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
+                <a href="producto-lespaul-blueberry-xbox.html" class="block focus:outline-none" style="text-decoration:none;">
                     <div class="relative w-56 h-64 mb-6 group">
                         <img src="media/CRKD_LP_BB_XB_WS_012.png" alt="Gibson Les Paul Blueberry Burst Xbox" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
                         <img src="media/CRKD_LP_BB_XB_WS_022.png" alt="Gibson Les Paul Blueberry Burst Xbox Hover" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
@@ -183,6 +190,7 @@
                     <div class="text-base font-semibold text-gray-900 text-left">Gibson Les Paul Blueberry Burst Pro Edition para Xbox Series X|S, Xbox One, y PC</div>
                     <div class="w-full text-sm font-bold text-gray-600 text-left mb-2">CRKD</div>
                     <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 474.90</div>
+                </a>
                 </div>
                 <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
                     <div class="relative w-56 h-64 mb-6 group">
@@ -207,7 +215,7 @@
                 <section class="max-w-full mx-auto px-12 py-16">
             <h3 class="text-sm font-bold mb-8">//TIENDA</h3>
             <h2 class="text-4xl font-bold mb-8">PRODUCTOS</h2>
-            <p class="text-lg text-black mb-12">Explora nuestra selección de controles y accesorios compatibles con tus juegos de ritmo favoritos.</p>
+            <p class="text-lg text-black mb-12 darkmode-index-desc">Explora nuestra selección de controles y accesorios compatibles con tus juegos de ritmo favoritos.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
                 <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
                     <div class="relative w-56 h-64 mb-6 group">
