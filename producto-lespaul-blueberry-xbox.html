@@ -6,6 +6,7 @@
     <title>Gibson Les Paul Blueberry Burst Pro Edition Xbox | RIFF</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/RodinPro.css">
+    <script src="js/i18n.js"></script>
 </head>
 <body class="bg-gray-50" style="font-family: 'RodinPro', sans-serif;">
     <div id="darkmode-tab" style="position: fixed; bottom: 24px; left: 0; z-index: 1001;">
@@ -27,7 +28,7 @@
             </div>
             <nav class="hidden md:flex items-center gap-8">
                 <div class="relative group">
-                    <button class="font-semibold text-lg flex items-center gap-1">Productos <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+                    <button class="font-semibold text-lg flex items-center gap-1" data-i18n="products_header">Productos <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
                     <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                         <div class="py-2">
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Guitarras</a>
@@ -39,19 +40,36 @@
                     </div>
                 </div>
                 <div class="relative group">
-                    <button class="font-semibold text-lg flex items-center gap-1">Marcas <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+                    <button class="font-semibold text-lg flex items-center gap-1" data-i18n="brands">Marcas <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
                     <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                         <div class="py-2">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">CRKD</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">RiffMaster</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Mad Catz</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-i18n="crkd">CRKD</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-i18n="riffmaster">RiffMaster</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-i18n="madcatz">Mad Catz</a>
                         </div>
                     </div>
                 </div>
-                <a href="#" class="font-semibold text-lg">Sobre nosotros</a>
+                <a href="#" class="font-semibold text-lg" data-i18n="about_us">Sobre nosotros</a>
             </nav>
             <div class="flex items-center gap-4 md:gap-8">
                 <div class="hidden sm:flex items-center gap-4 md:gap-8">
+                    <div class="relative inline-block text-left" id="lang-dropdown-desktop">
+                        <button id="dropdownLangBtn" type="button" class="inline-flex items-center px-3 py-1 transition-colors duration-200 bg-white dark:bg-[#23272f] border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-50 dark:hover:bg-[#18181b] focus:outline-none focus:ring-2 focus:ring-blue-400" aria-haspopup="true" aria-expanded="false" style="color:inherit;">
+                            <img id="lang-flag" src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" style="background:transparent;" />
+                            <span id="lang-label" class="font-semibold text-gray-900 dark:text-gray-100 transition-colors duration-200">ES</span>
+                            <svg class="ml-2 w-4 h-4 text-gray-900 dark:text-gray-100 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="dropdownLangMenu" class="origin-top-right absolute left-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-50">
+                            <div class="py-1">
+                                <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="es">
+                                    <img src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" />ES
+                                </button>
+                                <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">
+                                    <img src="https://flagcdn.com/24x18/gb.png" alt="English" class="inline mr-2" width="24" height="18" />EN
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <button aria-label="Search" class="text-2xl text-gray-900">
                         <span class="sr-only">Buscar</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -71,7 +89,25 @@
                         </svg>
                     </button>
                 </div>
-                <label for="menu-toggle" class="md:hidden cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1 z-10 relative">
+                <div class="flex flex-row items-center sm:hidden gap-2">
+                    <div class="relative inline-block text-left" id="lang-dropdown-mobile">
+                        <button id="dropdownLangBtnMobile" type="button" class="inline-flex items-center px-3 py-1 transition-colors duration-200 bg-white dark:bg-[#23272f] border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-50 dark:hover:bg-[#18181b] focus:outline-none focus:ring-2 focus:ring-blue-400" aria-haspopup="true" aria-expanded="false" style="color:inherit;">
+                            <img id="lang-flag-mobile" src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" />
+                            <span id="lang-label-mobile" class="font-semibold text-gray-900 dark:text-gray-100 transition-colors duration-200">ES</span>
+                            <svg class="ml-2 w-4 h-4 text-gray-900 dark:text-gray-100 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="dropdownLangMenuMobile" class="origin-top-right absolute left-0 mt-2 w-32 rounded-md shadow-lg bg-white dark:bg-[#23272f] ring-1 ring-black ring-opacity-5 hidden z-50">
+                            <div class="py-1">
+                                <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-[#18181b]" data-lang="es">
+                                    <img src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" />ES
+                                </button>
+                                <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-[#18181b]" data-lang="en">
+                                    <img src="https://flagcdn.com/24x18/gb.png" alt="English" class="inline mr-2" width="24" height="18" />EN
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="menu-toggle" class="md:hidden cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1 z-10 relative">
                     <span class="sr-only">Abrir menú</span>
                     <div class="w-6 h-0.5 bg-gray-900 transition-all duration-300 peer-checked:rotate-45 peer-checked:translate-y-2"></div>
                     <div class="w-6 h-0.5 bg-gray-900 transition-all duration-300 peer-checked:opacity-0"></div>
@@ -139,50 +175,51 @@
     </header>
     <main class="pt-28 pb-16 max-w-6xl mx-auto px-4 md:px-8">
         <div class="flex flex-col md:flex-row gap-10">
-            <!-- Galería de imágenes -->
             <div class="flex-1 flex flex-col items-center">
                 <div class="relative w-full max-w-md h-[400px] bg-white rounded-xl shadow p-4 flex items-center justify-center">
                     <img id="main-img" src="media/CRKD_LP_BB_XB_WS_012.png" alt="Gibson Les Paul Blueberry Burst Xbox" class="object-contain w-full h-full transition-all duration-300" />
                 </div>
                 <div class="flex gap-4 mt-4">
-                    <img src="media/CRKD_LP_BB_XB_WS_012.png" alt="Vista 1" class="w-20 h-20 object-contain rounded border-2 border-gray-200 cursor-pointer hover:border-blue-400" onclick="document.getElementById('main-img').src='media/CRKD_LP_BB_XB_WS_012.png'">
-                    <img src="media/CRKD_LP_BB_XB_WS_022.png" alt="Vista 2" class="w-20 h-20 object-contain rounded border-2 border-gray-200 cursor-pointer hover:border-blue-400" onclick="document.getElementById('main-img').src='media/CRKD_LP_BB_XB_WS_022.png'">
+                    <div class="w-20 h-20 rounded border-2 border-gray-200 bg-white flex items-center justify-center cursor-pointer hover:border-blue-400">
+                        <img src="media/CRKD_LP_BB_XB_WS_012.png" alt="Vista 1" class="object-contain w-full h-full rounded" onclick="document.getElementById('main-img').src='media/CRKD_LP_BB_XB_WS_012.png'">
+                    </div>
+                    <div class="w-20 h-20 rounded border-2 border-gray-200 bg-white flex items-center justify-center cursor-pointer hover:border-blue-400">
+                        <img src="media/CRKD_LP_BB_XB_WS_022.png" alt="Vista 2" class="object-contain w-full h-full rounded" onclick="document.getElementById('main-img').src='media/CRKD_LP_BB_XB_WS_022.png'">
+                    </div>
                 </div>
             </div>
-            <!-- Detalles del producto -->
             <div class="flex-1 flex flex-col gap-6">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 darkmode-main-title">Gibson Les Paul Blueberry Burst Pro Edition para Xbox Series X|S, Xbox One, y PC</h1>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 darkmode-main-title" data-i18n="product_title_xbox">Gibson Les Paul Blueberry Burst Pro Edition para Xbox Series X|S, Xbox One, y PC</h1>
                 <div class="flex items-center gap-2">
                     <span class="text-yellow-400 text-xl">★★★★★</span>
-                    <span class="text-sm text-gray-600 darkmode-main-opiniones">(23 opiniones)</span>
+                    <span class="text-sm text-gray-600 darkmode-main-opiniones" data-i18n="reviews_count">(23 opiniones)</span>
                 </div>
-                <div class="text-2xl font-bold text-green-600">S/ 474.90</div>
+                <div class="text-2xl font-bold text-green-600" data-i18n="price_474">S/ 474.90</div>
                 <div class="text-base text-gray-700">
                     <ul class="list-disc pl-5 space-y-1 darkmode-main-list">
-                        <li class="darkmode-main-listitem">Compatibilidad multiplataforma: Xbox Series X|S, Xbox One, PC.</li>
-                        <li class="darkmode-main-listitem">Diseño inspirado en la icónica Gibson Les Paul.</li>
-                        <li class="darkmode-main-listitem">Conectividad inalámbrica de alta precisión.</li>
-                        <li class="darkmode-main-listitem">Materiales premium y acabado Blueberry Burst.</li>
-                        <li class="darkmode-main-listitem">Incluye correa ajustable y stickers exclusivos.</li>
+                        <li class="darkmode-main-listitem" data-i18n="feature_xbox_1">Compatibilidad multiplataforma: Xbox Series X|S, Xbox One, PC.</li>
+                        <li class="darkmode-main-listitem" data-i18n="feature_2">Diseño inspirado en la icónica Gibson Les Paul.</li>
+                        <li class="darkmode-main-listitem" data-i18n="feature_3">Conectividad inalámbrica de alta precisión.</li>
+                        <li class="darkmode-main-listitem" data-i18n="feature_4">Materiales premium y acabado Blueberry Burst.</li>
+                        <li class="darkmode-main-listitem" data-i18n="feature_5">Incluye correa ajustable y stickers exclusivos.</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <span class="text-sm text-gray-500">Vendido y enviado por <span class="font-semibold text-gray-800 darkmode-main-strong">RIFF</span></span>
-                    <span class="text-sm text-green-700">En stock. Envío inmediato.</span>
+                    <span class="text-sm text-gray-500"><span data-i18n="sold_by">Vendido y enviado por</span> <span class="font-semibold text-gray-800 darkmode-main-strong">RIFF</span></span>
+                    <span class="text-sm text-green-700" data-i18n="in_stock">En stock. Envío inmediato.</span>
                 </div>
-                <button class="bg-[#16ff90] hover:bg-green-400 text-black font-bold py-3 px-8 rounded-lg text-lg shadow transition w-full md:w-auto">Agregar al carrito</button>
-                <div class="text-sm text-gray-500 mt-2">¿Tienes preguntas? <a href="https://wa.me/51916391236?text=Hola, tengo una consulta sobre el producto Gibson Les Paul Blueberry Burst Xbox" target="_blank" class="text-[#2ECBFF] hover:underline font-semibold">Contáctanos por WhatsApp</a></div>
+                <button class="bg-[#16ff90] hover:bg-green-400 text-black font-bold py-3 px-8 rounded-lg text-lg shadow transition w-full md:w-auto" data-i18n="add_to_cart">Agregar al carrito</button>
+                <div class="text-sm text-gray-500 mt-2"><span data-i18n="have_questions">¿Tienes preguntas?</span> <a href="https://wa.me/51916391236?text=Hola, tengo una consulta sobre el producto Gibson Les Paul Blueberry Burst Xbox" target="_blank" class="text-[#2ECBFF] hover:underline font-semibold" data-i18n="contact_whatsapp">Contáctanos por WhatsApp</a></div>
             </div>
         </div>
-        <!-- Descripción extendida -->
         <section class="mt-16 bg-white rounded-xl shadow p-8 darkmode-desc" style="background:#fff;">
-            <h2 class="text-2xl font-bold mb-4 darkmode-desc-title">Sobre este artículo</h2>
+            <h2 class="text-2xl font-bold mb-4 darkmode-desc-title" data-i18n="about_product">Sobre este artículo</h2>
             <ul class="list-disc pl-5 text-gray-800 space-y-2 darkmode-desc-list">
-                <li class="darkmode-desc-item">OFICIALMENTE LICENCIADO POR MICROSOFT - Compatible con Xbox Series S|X, Xbox One, PC, dispositivos portátiles de PC, dispositivos Android, incluyendo televisores inteligentes, tabletas, dispositivos móviles y servicios de transmisión en la nube como Xbox Cloud Gaming y Luna</li>
-                <li class="darkmode-desc-item">TRASTES Y BARRA DE ARRASTRE PREMIUM - Los trastes mecánicos ofrecen una experiencia de juego superior proporcionando una precisión y respuesta inigualables. La barra de punteo de efecto Hall te permite personalizar tu punto de actuación mientras garantiza una larga vida útil. También cuenta con retroalimentación háptica para darte una sensación táctil con cada rasgueo.</li>
-                <li class="darkmode-desc-item">DISEÑO MODULAR: El diseño modular le permite cambiar su cuello para que coincida con su sensación perfecta. Cámbialo por el diseño de cuello individual con 5 trastes individuales adicionales u opta por los botones estándar clásicos.</li>
-                <li class="darkmode-desc-item">NAVEGACIÓN FÁCIL: Dos palancas analógicas integradas, un D-pad ergonómico en el cabezal y un centro de navegación de ocho botones para una fácil navegación en el menú del juego.</li>
-                <li class="darkmode-desc-item">NUNCA PIERDAS UNA NOTA: Disfruta de la flexibilidad de la conectividad con cable (cable USB), inalámbrica de sondeo rápido y baja latencia (dongle de 2.4GHz) o Bluetooth y funcionalidad de inclinación para la activación de Star Power. Viene con una correa para el hombro y un cable USB-C de 2.5m con un mecanismo de bloqueo para conexiones seguras.</li>
+                <li class="darkmode-desc-item" data-i18n="spec_xbox_1">OFICIALMENTE LICENCIADO POR MICROSOFT - Compatible con Xbox Series S|X, Xbox One, PC, dispositivos portátiles de PC, dispositivos Android, incluyendo televisores inteligentes, tabletas, dispositivos móviles y servicios de transmisión en la nube como Xbox Cloud Gaming y Luna</li>
+                <li class="darkmode-desc-item" data-i18n="spec_xbox_2">TRASTES Y BARRA DE ARRASTRE PREMIUM - Los trastes mecánicos ofrecen una experiencia de juego superior proporcionando una precisión y respuesta inigualables. La barra de punteo de efecto Hall te permite personalizar tu punto de actuación mientras garantiza una larga vida útil. También cuenta con retroalimentación háptica para darte una sensación táctil con cada rasgueo.</li>
+                <li class="darkmode-desc-item" data-i18n="spec_xbox_3">DISEÑO MODULAR: El diseño modular le permite cambiar su cuello para que coincida con su sensación perfecta. Cámbialo por el diseño de cuello individual con 5 trastes individuales adicionales u opta por los botones estándar clásicos.</li>
+                <li class="darkmode-desc-item" data-i18n="spec_xbox_4">NAVEGACIÓN FÁCIL: Dos palancas analógicas integradas, un D-pad ergonómico en el cabezal y un centro de navegación de ocho botones para una fácil navegación en el menú del juego.</li>
+                <li class="darkmode-desc-item" data-i18n="spec_xbox_5">NUNCA PIERDAS UNA NOTA: Disfruta de la flexibilidad de la conectividad con cable (cable USB), inalámbrica de sondeo rápido y baja latencia (dongle de 2.4GHz) o Bluetooth y funcionalidad de inclinación para la activación de Star Power. Viene con una correa para el hombro y un cable USB-C de 2.5m con un mecanismo de bloqueo para conexiones seguras.</li>
             </ul>
         </section>
     </main>
@@ -190,11 +227,11 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8">
             <div class="flex-1">
                 <img src="media/rifflogo.png" alt="Logo" class="h-10 mb-2 invert" />
-                <p class="mb-4 text-lg">¡Sé el primero en enterarte de novedades, lanzamientos y ofertas!</p>
-                <a href="form_join.html" class="bg-[#2ECBFF] hover:bg-[#8AE2FF] text-black font-bold py-4 px-12 rounded-xl text-base shadow-lg transition mt-8">Únete a Riff</a>
+                <p class="mb-4 text-lg" data-i18n="be_first">¡Sé el primero en enterarte de novedades, lanzamientos y ofertas!</p>
+                <a href="form_join.html" class="bg-[#2ECBFF] hover:bg-[#8AE2FF] text-black font-bold py-4 px-12 rounded-xl text-base shadow-lg transition mt-8" data-i18n="join_riff">Únete a Riff</a>
             </div>
             <div class="flex-1 flex items-end justify-end">
-                <p class="text-xs text-gray-400 mt-8 md:mt-0">&copy; 2025 RIFF. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-400 mt-8 md:mt-0">&copy; 2025 RIFF. <span data-i18n="all_rights">Todos los derechos reservados.</span></p>
             </div>
         </div>
     </footer>

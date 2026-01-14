@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIFF • Controles para Guitar Hero & Rock Band</title>
+    <title>RIFF • Sobre Nosotros</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/RodinPro.css"></link>
     <script src="js/i18n.js"></script>
@@ -11,23 +11,6 @@
     <body class="bg-white" style="font-family: 'RodinPro', sans-serif;">
     <div id="darkmode-tab" style="position: fixed; bottom: 24px; left: 0; z-index: 1001;">
         <button id="tab-toggle" class="bg-gray-800 text-white rounded-r-xl px-5 py-2 shadow-md text-base">🌙</button>
-    </div>
-    <div class="relative w-full h-[720px] flex items-center justify-center">
-        <video class="w-full h-full object-cover" autoplay muted loop>
-            <source src="media/crkdvideo.mp4" type="video/mp4" />
-            Tu navegador no soporta el video.
-        </video>
-        <div class="absolute inset-0 bg-black opacity-25 pointer-events-none"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-            <span class="text-white text-lg font-bold mb-2 drop-shadow-lg" data-i18n="gibson_tag">CRKD x Gibson<sup class="text-xs">®</sup></span>
-            <a href="https://wa.me/51916391236?text=Hola, quiero más información" target="_blank" aria-label="WhatsApp" style="position: fixed; bottom: 24px; right: 24px; z-index: 1000;">
-                <span style="display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; background:#25D366; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-                    <img src="media/Whatsapp.svg" alt="WhatsApp" style="width:36px; height:36px;">
-                </span>
-            </a>
-            <h1 class="text-white text-5xl font-semibold mb-6 drop-shadow-lg" data-i18n="lespaul_title">Les Paul<sup class="text-base align-super">®</sup> Guitar Controller</h1>
-            <a href="producto-lespaul-blueberry.html" class="bg-[#16ff90] hover:bg-green-400 text-black font-bold py-4 px-12 rounded-xl text-base shadow-lg transition mt-8" data-i18n="order_now">ORDENA AHORA</a>
-        </div>
     </div>
         <header class="bg-gray-100 w-full fixed top-0 left-0 z-50 shadow-md">
             <div class="w-full bg-gradient-to-r from-[#00bfff] via-[#fff700] to-[#ff9900] h-1 absolute top-0 left-0"></div>
@@ -42,7 +25,7 @@
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="index.html#novedades" class="font-semibold text-lg" data-i18n="products_header">Novedades</a>
                     <a href="productos.html" class="font-semibold text-lg" data-i18n="brands">Productos</a>
-                    <a href="about.html" class="font-semibold text-lg" data-i18n="about_us">Sobre nosotros</a>
+                    <a href="#" class="font-semibold text-lg" data-i18n="about_us">Sobre nosotros</a>
                 </nav>
                 
                 <div class="flex items-center gap-4 md:gap-8">
@@ -114,9 +97,42 @@
             
             <nav class="md:hidden absolute top-full left-0 w-full bg-gray-100 shadow-lg max-h-0 overflow-hidden peer-checked:max-h-screen transition-all duration-300 ease-in-out">
                 <div class="flex flex-col py-4">
-                    <a href="index.html#novedades" class="font-semibold text-lg block px-6 py-3 border-b border-gray-200" data-i18n="products_header">Novedades</a>
-                    <a href="productos.html" class="font-semibold text-lg block px-6 py-3 border-b border-gray-200" data-i18n="brands">Productos</a>
-                    <a href="about.html" class="font-semibold text-lg block px-6 py-3 border-b border-gray-200" data-i18n="about_us">Sobre nosotros</a>
+                    <div class="border-b border-gray-200">
+                        <input type="checkbox" id="productos-toggle" class="hidden peer">
+                        <label for="productos-toggle" class="px-6 py-3 font-semibold text-lg flex items-center justify-between w-full cursor-pointer">
+                            Productos 
+                            <svg class="w-4 h-4 transition-transform duration-300 peer-checked:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </label>
+                        <div class="max-h-0 overflow-hidden peer-checked:max-h-40 transition-all duration-300 bg-gray-50">
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="product_guitars">Guitarras</a>
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="product_drums">Drum Kits</a>
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="product_pro_guitars">Guitarras Pro</a>
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="product_pads">Pads</a>
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="product_mics">Micrófonos</a>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200">
+                        <input type="checkbox" id="marcas-toggle" class="hidden peer">
+                        <label for="marcas-toggle" class="px-6 py-3 font-semibold text-lg flex items-center justify-between w-full cursor-pointer">
+                            Marcas 
+                            <svg class="w-4 h-4 transition-transform duration-300 peer-checked:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </label>
+                        <div class="max-h-0 overflow-hidden peer-checked:max-h-32 transition-all duration-300 bg-gray-50">
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="crkd">CRKD</a>
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="riffmaster">RiffMaster</a>
+                            <a href="#" class="block px-8 py-2 text-gray-700 hover:bg-gray-200 transition-colors" data-i18n="madcatz">Mad Catz</a>
+                        </div>
+                    </div>
+                    
+                    <div class="px-6 py-3 border-b border-gray-200">
+                        <a href="#" class="font-semibold text-lg block" data-i18n="about_us">Sobre nosotros</a>
+                    </div>
+                    
                     <div class="sm:hidden flex justify-center gap-6 px-6 py-4 mt-4">
                         <button aria-label="Search" class="text-2xl text-gray-900">
                             <span class="sr-only">Buscar</span>
@@ -140,103 +156,23 @@
                 </div>
             </nav>
         </header>
-        <section id="novedades" class="max-w-full mx-auto px-12 py-16">
-            <h3 class="text-sm font-bold mb-8" data-i18n="shop">//TIENDA</h3>
-            <h2 class="text-4xl font-bold mb-8" data-i18n="news">NOVEDADES</h2>
-            <p class="text-lg text-black mb-12 darkmode-index-desc" data-i18n="news_desc">Ha llegado la nueva línea de CRKD x Gibson<sup class="text-xs">®</sup>, con características innovadoras y modernas diseñadas para los jugadores de hoy.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <a href="producto-lespaul-blueberry.html" class="block focus:outline-none w-full" style="text-decoration:none;">
-                        <div class="w-full flex justify-center">
-                            <div class="relative w-56 h-64 mb-6 group cursor-pointer">
-                                <img src="media/CRKD_LP_BB_MP_WS_012.png" alt="Gibson Les Paul Blueberry Burst" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                                <img src="media/CRKD_LP_BB_MP_WS_022.png" alt="Gibson Les Paul Blueberry Burst Hover" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                            </div>
-                        </div>
-                        <div class="text-base font-semibold text-gray-900 text-left" data-i18n="gibson_blueberry">Gibson Les Paul Blueberry Burst Pro Edition Guitar Controller (Multi-platform)</div>
-                        <div class="w-full text-sm font-bold text-gray-600 text-left mb-2">CRKD</div>
-                        <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 439.90</div>
-                    </a>
-                </div>
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <a href="producto-lespaul-blueberry-xbox.html" class="block focus:outline-none w-full" style="text-decoration:none;">
-                        <div class="w-full flex justify-center">
-                            <div class="relative w-56 h-64 mb-6 group">
-                                <img src="media/CRKD_LP_BB_XB_WS_012.png" alt="Gibson Les Paul Blueberry Burst Xbox" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                                <img src="media/CRKD_LP_BB_XB_WS_022.png" alt="Gibson Les Paul Blueberry Burst Xbox Hover" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                            </div>
-                        </div>
-                        <div class="text-base font-semibold text-gray-900 text-left" data-i18n="gibson_blueberry_xbox">Gibson Les Paul Blueberry Burst Pro Edition for Xbox Series X|S, Xbox One, and PC</div>
-                        <div class="w-full text-sm font-bold text-gray-600 text-left mb-2">CRKD</div>
-                        <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 474.90</div>
-                    </a>
-                </div>
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
-                        <img src="media/CRKD_LP_BT_MP_WS_012.png" alt="Gibson Les Paul Black Tribal Encore" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                        <img src="media/CRKD_LP_BT_MP_WS_022.png" alt="Gibson Les Paul Black Tribal Encore Hover" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                    </div>
-                    <div class="text-base font-semibold text-gray-900 text-left" data-i18n="gibson_blacktribal">Gibson Les Paul Black Tribal Encore Edition Guitar Controller (Multi-platform)</div>
-                    <div class="w-full text-sm font-bold text-gray-600 text-left mb-2">CRKD</div>
-                    <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 404.90</div>
-                </div>
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
-                        <img src="media/CRKD_LP_BT_XB_WS_012.png" alt="Gibson Les Paul Black Tribal Encore Xbox" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                        <img src="media/CRKD_LP_BT_XB_WS_022.png" alt="Gibson Les Paul Black Tribal Encore Xbox Hover" class="absolute inset-0 w-full h-full object-contain scale-150 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                    </div>
-                    <div class="text-base font-semibold text-gray-900 text-left" data-i18n="gibson_blacktribal_xbox">Gibson Les Paul Black Tribal Encore Edition for Xbox Series X|S, Xbox One, and PC</div>
-                    <div class="w-full text-sm font-bold text-gray-600 text-left mb-2" data-i18n="crkd">CRKD</div>
-                    <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 439.90</div>
-                </div>
+        <section class="max-w-full mx-auto px-12 py-16 pt-32">
+            <div class="flex flex-col items-center">
+                <img src="media/about_main.jpg" alt="Sobre Nosotros" class="w-full max-w-6xl rounded-2xl shadow-2xl mb-12 object-cover mx-auto" style="max-height:650px; min-height:220px;" />
+            </div>
+            <div class="about-bg rounded-xl shadow-lg px-6 py-10 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 text-center about-title" data-i18n="about_title">Sobre Nosotros</h2>
+                <p class="text-lg mb-6 text-center about-text" data-i18n="about_intro">
+                    En RIFF, somos apasionados por la música y los videojuegos. Nuestra tienda nació con el objetivo de acercar a los jugadores de Guitar Hero, Rock Band y otros juegos de ritmo los mejores controles y accesorios del mercado. Seleccionamos cuidadosamente productos originales y de alta calidad para que vivas la mejor experiencia musical en tu consola o PC.
+                </p>
+                <p class="text-lg mb-6 text-center about-text" data-i18n="about_mission">
+                    Nos esforzamos por ofrecer atención personalizada, envíos rápidos y un catálogo siempre actualizado con las últimas novedades. Creemos en la comunidad gamer-musical y trabajamos para que cada cliente encuentre el instrumento perfecto para su juego favorito.
+                </p>
+                <p class="text-lg mb-6 text-center about-text" data-i18n="about_values">
+                    Gracias por confiar en RIFF. ¡Sigue rockeando y que la música nunca pare!
+                </p>
             </div>
         </section>
-                <section class="max-w-full mx-auto px-12 py-16">
-            <h3 class="text-sm font-bold mb-8" data-i18n="shop">//TIENDA</h3>
-            <h2 class="text-4xl font-bold mb-8" data-i18n="products">PRODUCTOS</h2>
-            <p class="text-lg text-black mb-12 darkmode-index-desc" data-i18n="products_desc">Explora nuestra selección de controles y accesorios compatibles con tus juegos de ritmo favoritos.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
-                        <img src="media/RFM_PS_01.png" alt="PDP RIFFMASTER" class="absolute inset-0 w-full h-full object-contain scale-100 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                        <img src="media/RFM_PS_02.png" alt="PDP RIFFMASTER Hover" class="absolute inset-0 w-full h-full object-contain scale-125 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                    </div>
-                    <div class="text-base font-semibold text-gray-900 text-left" data-i18n="riffmaster_ps">RIFFMASTER Wireless Guitar Controller for PlayStation 5 and PlayStation 4</div>
-                    <div class="w-full text-sm font-bold text-gray-600 text-left mb-2" data-i18n="pdp">PDP</div>
-                    <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 349.90</div>
-                </div>
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
-                        <img src="media/RFM_XB_01.png" alt="PDP RIFFMASTER" class="absolute inset-0 w-full h-full object-contain scale-100 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                        <img src="media/RFM_XB_02.png" alt="PDP RIFFMASTER Hover" class="absolute inset-0 w-full h-full object-contain scale-125 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                    </div>
-                    <div class="text-base font-semibold text-gray-900 text-left" data-i18n="riffmaster_xb">RIFFMASTER Wireless Guitar Controller for Xbox Series X|S, Xbox One and Windows</div>
-                    <div class="w-full text-sm font-bold text-gray-600 text-left mb-2">PDP</div>
-                    <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 414.90</div>
-                </div>
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
-                        <img src="media/MC_RB_PS_01.png" alt="Mad Catz Guitar Controller" class="absolute inset-0 w-full h-full object-contain scale-100 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                        <img src="media/MC_RB_PS_02.png" alt="Mad Catz Guitar Controller Hover" class="absolute inset-0 w-full h-full object-contain scale-125 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                    </div>
-                    <div class="text-base font-semibold text-gray-900 text-left" data-i18n="madcatz_rb_ps">Rock Band 4 Wireless Guitar for PlayStation 4</div>
-                    <div class="w-full text-sm font-bold text-gray-600 text-left mb-2" data-i18n="madcatz">Mad Catz</div>
-                    <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 319.90</div>
-                </div>
-                <div class="bg-gray-100 rounded-xl pt-2 pb-8 px-8 shadow flex flex-col items-center">
-                    <div class="relative w-56 h-64 mb-6 group">
-                        <img src="media/DR_RB_PS_01.png" alt="Rock Band Wired Drum Kit Set Stand" class="absolute inset-0 w-full h-full object-contain scale-100 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
-                        <img src="media/DR_RB_PS_02.png" alt="Rock Band Wired Drum Kit Set Stand Hover" class="absolute inset-0 w-full h-full object-contain scale-125 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                    </div>
-                    <div class="text-base font-semibold text-gray-900 text-left" data-i18n="drumkit_rb_ps">Rock Band Wired Drum Kit Set Stand for PlayStation 3 and PlayStation 2</div>
-                    <div class="w-full text-sm font-bold text-gray-600 text-left mb-2" data-i18n="playstation">PlayStation</div>
-                    <div class="w-full text-lg font-bold text-gray-700 text-left">S/ 649.90</div>
-                </div>
-            </div>
-        </section>
-        <div class="w-full flex justify-center mt-8 mb-2">
-            <a href="productos.html" class="text-lg font-bold text-gray-700 hover:text-blue-600 transition-colors darkmode-see-more" data-i18n="see_more">Ver más</a>
-        </div>
         <footer class="bg-black text-white px-12 py-10 mt-16">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8">
                 <div class="flex-1">

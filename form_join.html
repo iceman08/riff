@@ -6,6 +6,7 @@
     <title>RIFF • Controles para Guitar Hero & Rock Band</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/RodinPro.css">
+    <script src="js/i18n.js"></script>
 </head>
     <body class="bg-white" style="font-family: 'RodinPro', sans-serif;">
     <div id="darkmode-tab" style="position: fixed; bottom: 24px; left: 0; z-index: 1001;">
@@ -28,7 +29,7 @@
                 
                 <nav class="hidden md:flex items-center gap-8">
                     <div class="relative group">
-                        <button class="font-semibold text-lg flex items-center gap-1">Productos <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <button class="font-semibold text-lg flex items-center gap-1" data-i18n="products_header">Productos <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
                         <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <div class="py-2">
                                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Guitarras</a>
@@ -40,7 +41,7 @@
                         </div>
                     </div>
                     <div class="relative group">
-                        <button class="font-semibold text-lg flex items-center gap-1">Marcas <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+                        <button class="font-semibold text-lg flex items-center gap-1" data-i18n="brands">Marcas <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
                         <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <div class="py-2">
                                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">CRKD</a>
@@ -49,11 +50,28 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="font-semibold text-lg">Sobre nosotros</a>
+                    <a href="#" class="font-semibold text-lg" data-i18n="about_us">Sobre nosotros</a>
                 </nav>
                 
                 <div class="flex items-center gap-4 md:gap-8">
                     <div class="hidden sm:flex items-center gap-4 md:gap-8">
+                        <div class="relative inline-block text-left" id="lang-dropdown-desktop">
+                            <button id="dropdownLangBtn" type="button" class="inline-flex items-center px-3 py-1 transition-colors duration-200 bg-white dark:bg-[#23272f] border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-50 dark:hover:bg-[#18181b] focus:outline-none focus:ring-2 focus:ring-blue-400" aria-haspopup="true" aria-expanded="false" style="color:inherit;">
+                                <img id="lang-flag" src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" style="background:transparent;" />
+                                <span id="lang-label" class="font-semibold text-gray-900 dark:text-gray-100 transition-colors duration-200">ES</span>
+                                <svg class="ml-2 w-4 h-4 text-gray-900 dark:text-gray-100 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            </button>
+                            <div id="dropdownLangMenu" class="origin-top-right absolute left-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-50">
+                                <div class="py-1">
+                                    <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="es">
+                                        <img src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" />ES
+                                    </button>
+                                    <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">
+                                        <img src="https://flagcdn.com/24x18/gb.png" alt="English" class="inline mr-2" width="24" height="18" />EN
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         <button aria-label="Search" class="text-2xl text-gray-900">
                             <span class="sr-only">Buscar</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -74,7 +92,25 @@
                         </button>
                     </div>
                     
-                    <label for="menu-toggle" class="md:hidden cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1 z-10 relative">
+                    <div class="flex flex-row items-center sm:hidden gap-2">
+                        <div class="relative inline-block text-left" id="lang-dropdown-mobile">
+                            <button id="dropdownLangBtnMobile" type="button" class="inline-flex items-center px-3 py-1 transition-colors duration-200 bg-white dark:bg-[#23272f] border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-50 dark:hover:bg-[#18181b] focus:outline-none focus:ring-2 focus:ring-blue-400" aria-haspopup="true" aria-expanded="false" style="color:inherit;">
+                                <img id="lang-flag-mobile" src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" />
+                                <span id="lang-label-mobile" class="font-semibold text-gray-900 dark:text-gray-100 transition-colors duration-200">ES</span>
+                                <svg class="ml-2 w-4 h-4 text-gray-900 dark:text-gray-100 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            </button>
+                            <div id="dropdownLangMenuMobile" class="origin-top-right absolute left-0 mt-2 w-32 rounded-md shadow-lg bg-white dark:bg-[#23272f] ring-1 ring-black ring-opacity-5 hidden z-50">
+                                <div class="py-1">
+                                    <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-[#18181b]" data-lang="es">
+                                        <img src="https://flagcdn.com/24x18/es.png" alt="Español" class="inline mr-2" width="24" height="18" />ES
+                                    </button>
+                                    <button class="w-full flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-[#18181b]" data-lang="en">
+                                        <img src="https://flagcdn.com/24x18/gb.png" alt="English" class="inline mr-2" width="24" height="18" />EN
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="menu-toggle" class="md:hidden cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1 z-10 relative">
                         <span class="sr-only">Abrir menú</span>
                         <div class="w-6 h-0.5 bg-gray-900 transition-all duration-300 peer-checked:rotate-45 peer-checked:translate-y-2"></div>
                         <div class="w-6 h-0.5 bg-gray-900 transition-all duration-300 peer-checked:opacity-0"></div>
@@ -142,19 +178,19 @@
             </nav>
         </header>
         <main class="bg-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-            <h2 class="mb-4 text-xl font-bold text-gray-900">¡Únete a la familia Riff!</h2>
+            <h2 class="mb-4 text-xl font-bold text-gray-900" data-i18n="join_family">¡Únete a la familia Riff!</h2>
             <form action="#">
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="sm:col-span-2">
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nombre Completo</label>
-                        <input type="text" name="name" id="name" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Ingrese su nombre" required="">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900" data-i18n="full_name">Nombre Completo</label>
+                        <input type="text" name="name" id="name" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " data-i18n="enter_name" placeholder="Ingrese su nombre" required="">
                     </div>
                     <div class="w-full">
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo</label>
-                        <input type="email" name="email" id="email" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Ingrese su correo" required="">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900" data-i18n="email">Correo</label>
+                        <input type="email" name="email" id="email" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " data-i18n="enter_email" placeholder="Ingrese su correo" required="">
                     </div>
                     <div class="w-full">
-                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900">Género</label>
+                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900" data-i18n="gender">Género</label>
                         <select id="gender" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
                             <option value="" disabled hidden selected >Seleccione su género</option>
                             <option value="Masculino">Masculino</option>
@@ -186,8 +222,8 @@
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-8">
                 <div class="flex-1">
                     <img src="media/rifflogo.png" alt="Logo" class="h-10 mb-2 invert" />
-                    <p class="mb-4 text-lg">¡Sé el primero en enterarte de novedades, lanzamientos y ofertas!</p>
-                    <a href="#" class="bg-[#2ECBFF] hover:bg-[#8AE2FF] text-black font-bold py-4 px-12 rounded-xl text-base shadow-lg transition mt-8">Únete a Riff</a>
+                    <p class="mb-4 text-lg" data-i18n="be_first">¡Sé el primero en enterarte de novedades, lanzamientos y ofertas!</p>
+                    <a href="#" class="bg-[#2ECBFF] hover:bg-[#8AE2FF] text-black font-bold py-4 px-12 rounded-xl text-base shadow-lg transition mt-8" data-i18n="join_riff">Únete a Riff</a>
                     <div class="flex gap-6 mt-8">
                         <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                         <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
@@ -207,7 +243,7 @@
                     </div>
                 </div>
                 <div class="flex-1 flex items-end justify-end">
-                    <p class="text-xs text-gray-400 mt-8 md:mt-0">&copy; 2025 RIFF. Todos los derechos reservados.</p>
+                    <p class="text-xs text-gray-400 mt-8 md:mt-0">&copy; 2025 RIFF. <span data-i18n="all_rights">Todos los derechos reservados.</span></p>
                 </div>
             </div>
         </footer>

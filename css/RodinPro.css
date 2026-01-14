@@ -48,4 +48,7 @@
 html {
     font-family: 'RodinPro', sans-serif;
 }
+body.dark .darkmode-index-desc {
+    color: #f3f3f3 !important;
+}
 /*End of Rodin Pro Font*/
