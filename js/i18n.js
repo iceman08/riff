@@ -16,6 +16,11 @@ function setLanguage(lang) {
   fetch('js/lang/' + lang + '.json')
     .then(response => response.json())
     .then(dict => {
+      // Cambiar el atributo lang del elemento <html>
+      const htmlTag = document.getElementById('html-lang') || document.documentElement;
+      if (htmlTag) htmlTag.setAttribute('lang', lang);
+      
+      // Traducir todos los elementos con data-i18n (UNA SOLA VEZ)
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) {
@@ -53,25 +58,18 @@ function setLanguage(lang) {
       // Botones de usuario, carrito, buscar (mobile)
       const mobileBtns = document.querySelectorAll('.sm\\:hidden button[aria-label], .sm\\:hidden a[aria-label]');
       mobileBtns.forEach(btn => {
-        if (btn.getAttribute('aria-label') === 'Search') btn.querySelector('.sr-only').textContent = dict['Buscar'] || 'Search';
-        if (btn.getAttribute('aria-label') === 'User') btn.querySelector('.sr-only').textContent = dict['Usuario'] || 'User';
-        if (btn.getAttribute('aria-label') === 'Cart') btn.querySelector('.sr-only').textContent = dict['Carrito'] || 'Cart';
+        if (btn.getAttribute('aria-label') === 'Search') btn.querySelector('.sr-only').textContent = dict['search'] || 'Search';
+        if (btn.getAttribute('aria-label') === 'User') btn.querySelector('.sr-only').textContent = dict['user'] || 'User';
+        if (btn.getAttribute('aria-label') === 'Cart') btn.querySelector('.sr-only').textContent = dict['cart'] || 'Cart';
       });
-      // Footer
-      // Forzar traducción de todos los elementos con data-i18n, incluyendo productos y footer
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.placeholder = dict[key];
-          } else {
-            el.innerHTML = dict[key];
-          }
-        }
-      });
+      
+      // Guardar idioma y actualizar dropdowns DESPUÉS de cargar las traducciones
+      localStorage.setItem('lang', lang);
+      updateDropdowns(lang);
+    })
+    .catch(error => {
+      console.error('Error loading language file:', error);
     });
-  localStorage.setItem('lang', lang);
-  updateDropdowns(lang);
 }
 
 function getLanguage() {
